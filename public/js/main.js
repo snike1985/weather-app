@@ -10,13 +10,13 @@ const clearTexts = () => {
 };
 
 weatherForm.addEventListener('submit', (e) => {
-    e.preventDefault();
     const address = searchField.value;
 
+    e.preventDefault();
     clearTexts();
 
     if (address) {
-        const url = `http://localhost:3000/weather?address=${address}`;
+        const url = `/weather?address=${address}`;
 
         weatherResult.textContent = 'Loading...';
 
