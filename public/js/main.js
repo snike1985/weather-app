@@ -1,4 +1,3 @@
-console.log('main');
 const weatherForm = document.getElementById('weather-form');
 const weatherLocation = document.getElementById('weather-location');
 const weatherResult = document.getElementById('weather-result');
