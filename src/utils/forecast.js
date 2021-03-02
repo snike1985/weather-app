@@ -10,8 +10,11 @@ const forecast = ({lat, lng}, callback) => {
         } else if (body['error']) {
             callback(body.error.info);
         } else {
-            const {weather_descriptions, temperature, precip} = body['current'];
-            const result = `${weather_descriptions[0]}. It is currently ${temperature} degrees out. There is a ${precip}% chance of rain.`;
+            const {weather_descriptions, temperature, precip, humidity} = body['current'];
+            const temperatureText = `It is currently ${temperature} degrees out.`;
+            const presipText = `There is a ${precip}% chance of rain.`;
+            const humidityText = `The humidity is ${humidity}%.`;
+            const result = `${weather_descriptions[0]}. ${temperatureText} ${presipText} ${humidityText}`;
 
             callback(undefined, result);
         }
